@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{69C147EF-706E-4CA1-9C07-E309B7FE60EB}"
+	ProjectSection(SolutionItems) = preProject
+		App.config = App.config
+		FindBridgesInGraph.cs = FindBridgesInGraph.cs
+		GraphBFSImplement.cs = GraphBFSImplement.cs
+		GraphClass.cs = GraphClass.cs
+		GraphDFSImplementation.cs = GraphDFSImplementation.cs
+		GraphTheory.csproj = GraphTheory.csproj
+		Program.cs = Program.cs
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphTheory", "GraphTheory.csproj", "{33B225D5-9A43-4A96-8A43-8080122A91AC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{33B225D5-9A43-4A96-8A43-8080122A91AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33B225D5-9A43-4A96-8A43-8080122A91AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33B225D5-9A43-4A96-8A43-8080122A91AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33B225D5-9A43-4A96-8A43-8080122A91AC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {75C214D7-6EFD-47F0-A497-4096B9F18058}
+	EndGlobalSection
+EndGlobal
