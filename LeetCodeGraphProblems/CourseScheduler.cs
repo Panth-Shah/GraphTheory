@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace LeetCodeGrapthProblems
 {
@@ -9,12 +10,14 @@ namespace LeetCodeGrapthProblems
         //This solution follows below algorithm
         //1. Build a graph from given array of courses
         //2. Traverse through graph using Backtracking and identify if there exist any cycles
-        private Dictionary<int, List<int>> coursePrerequisireGraph = null;
+        private Dictionary<int, List<int>> coursePrerequisiteGraph = null;
 
         public CourseScueduler()
         {
-            coursePrerequisireGraph = new Dictionary<int, List<int>>();
+            coursePrerequisiteGraph = new Dictionary<int, List<int>>();
         }
+
+        #region Graph with Dictionary and Backtracking
         public bool canFinishWithBacktracking(int numCourses, int[][] prerequisite)
         {
             //Build graph from from given Course Prerequisite matrix
@@ -27,7 +30,7 @@ namespace LeetCodeGrapthProblems
             for (int currCourse = 0; currCourse < numCourses; currCourse++)
             {
                 //Identify if cycle is detected in the graph
-                if(isCycleDetected(currCourse, coursePrerequisireGraph, isCourseVisited))
+                if(isCycleDetected(currCourse, coursePrerequisiteGraph, isCourseVisited))
                     return false;
             }
             return true;
@@ -41,7 +44,7 @@ namespace LeetCodeGrapthProblems
                 return true;
 
             //Current course isn't a part of curriculum to fulfill the requirement and so doesn't exist in the graph as well
-            if (!coursePrerequisireGraph.ContainsKey(currCourseNumber))
+            if (!coursePrerequisiteGraph.ContainsKey(currCourseNumber))
                 return false;
 
             //Mark course completed before starting traversal from that course
@@ -70,18 +73,27 @@ namespace LeetCodeGrapthProblems
                 //Course[1] is a prerequisite of Course[0]
                 //Store Prerequisites as Key and List of all the next courses follows
                 //Single course can have a prerequisite of many next courses and so completing single course can open new branches of the graph
-                if (!coursePrerequisireGraph.ContainsKey(courseDependency[1]))
+                if (!coursePrerequisiteGraph.ContainsKey(courseDependency[1]))
                 {
                     List<int> nextCourse = new List<int>();
                     nextCourse.Add(courseDependency[0]);
-                    coursePrerequisireGraph.Add(courseDependency[1], nextCourse);
+                    coursePrerequisiteGraph.Add(courseDependency[1], nextCourse);
                 }
                 else
                 {
                     //If preRequisite course number is already part of the mapping, add next course in the list
-                    coursePrerequisireGraph[courseDependency[1]].Add(courseDependency[0]);
+                    coursePrerequisiteGraph[courseDependency[1]].Add(courseDependency[0]);
                 }
             }
         }
+        #endregion
+    }
+
+    public class GraphNode
+    {
+        public int NodeValue { get; set; }
+        public List<int> NextNodeList { get; set; }
+        public bool isVisited { get; set; } = false;
+        public bool isCheckedForCycle { get; set; } = false;
     }
 }
