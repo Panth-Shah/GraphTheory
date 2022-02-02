@@ -10,25 +10,29 @@ namespace LeetCodeGrapthProblems
     {
         public int maximalSquare(char[][] matrix)
         {
-            int row = matrix.Length;
-            int column = row > 0 ? matrix[0].Length : 0;
-
-            int[,] dp = new int[row + 1, column + 1];
-            int maxSqLen = 0;
-            for (int i = 1; i <= row; i++)
+            int rows = matrix.Length, cols = matrix[0].Length;
+            int[,] dp = new int[rows, cols];
+            int maxsqlen = 0;
+            for (int i = 0; i < rows; i++)
             {
-                for (int j = 1; j <= column; j++)
+                for (int j = 0; j < cols; j++)
                 {
-                    //If current element is 1, identify if this element is a part of a square else single square
-                    if (matrix[i-1][j-1] == '1')
+                    if (i == 0 || j == 0)
                     {
-                        dp[i, j] = Math.Min(Math.Min(dp[i-1,j], dp[i-1,j-1]), dp[i, j-1]) + 1;
-                        maxSqLen = Math.Max(maxSqLen, dp[i, j]);
+                        if (matrix[i][j] == '1')
+                            dp[i, j] = 1;
                     }
+                    else
+                    {
+                        if (matrix[i][j] == '1')
+                        {
+                            dp[i, j] = Math.Min(Math.Min(dp[i, j - 1], dp[i - 1, j]), dp[i - 1, j - 1]) + 1;
+                        }
+                    }
+                    maxsqlen = Math.Max(maxsqlen, dp[i, j]);
                 }
             }
-            //Return area
-            return maxSqLen * maxSqLen;
+            return maxsqlen * maxsqlen;
         }
     }
 }

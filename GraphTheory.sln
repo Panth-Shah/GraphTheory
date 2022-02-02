@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphTheory", "GraphTheory.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeetCodeGrapthProblems", "LeetCodeGraphProblems\LeetCodeGrapthProblems.csproj", "{66530A26-BA6B-47AB-B601-DE70CF561282}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DynamicProgramming", "DynamicProgramming\DynamicProgramming.csproj", "{EFD907E9-ED05-4727-8DEA-587482D54F43}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{66530A26-BA6B-47AB-B601-DE70CF561282}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66530A26-BA6B-47AB-B601-DE70CF561282}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66530A26-BA6B-47AB-B601-DE70CF561282}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFD907E9-ED05-4727-8DEA-587482D54F43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFD907E9-ED05-4727-8DEA-587482D54F43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFD907E9-ED05-4727-8DEA-587482D54F43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFD907E9-ED05-4727-8DEA-587482D54F43}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
